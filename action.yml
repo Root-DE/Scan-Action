@@ -6,7 +6,8 @@ on:
   schedule:
     - cron:  '0 8 * * *'
   workflow_dispatch:
-
+  workflow_call: 
+    
 env:
   IMAGE_TAG_DEV: $(echo ghcr.io/${{ github.repository }}:staging |  tr '[:upper:]' '[:lower:]')
   IMAGE_TAG_PROD: $(echo ghcr.io/${{ github.repository }}:latest |  tr '[:upper:]' '[:lower:]')
